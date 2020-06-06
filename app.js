@@ -5,12 +5,12 @@ import logger from "morgan";
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import mongoConfig from "./configs/mongo-config";
 import routes from "./routes";
 import TypedError from "./modules/ErrorHandler";
+require('dotenv').config();
 
 mongoose.connect(
-  mongoConfig, {
+  process.env.MONGO_CONECTION, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,

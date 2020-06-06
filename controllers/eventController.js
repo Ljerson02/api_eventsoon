@@ -2,8 +2,6 @@ import EventSchema from "@models/Event";
 import TypedError from "../modules/ErrorHandler";
 import jwt from 'jsonwebtoken';
 
-const config = require('../configs/jwt-config')
-
 const show = async (req, res, next) => {
     try {
       var event = await EventSchema.findById(req.query.id);
@@ -39,7 +37,7 @@ const showAll = async (req, res, next) => {
 const create = async (req, res, next) => {
     try {
       var token = req.headers.authorization.replace('JWT ', '');
-      var decodedAuth = jwt.verify(token, config.secret);
+      var decodedAuth = jwt.verify(token, process.env.JWT_SECRET);
 
       var newEvent = new EventSchema({
         name:req.body.name,

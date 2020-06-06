@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-import config from "@config/jwt-config"
 const validateAuth = (req, res, next) => {
 
     var token = req.headers.authorization;
@@ -10,7 +9,7 @@ const validateAuth = (req, res, next) => {
     }
     console.log(token);
     var token = token.replace('JWT ', '');
-    var decodedAuth = jwt.verify(token, config.secret);
+    var decodedAuth = jwt.verify(token, process.env.JWT_SECRET);
     if(decodedAuth)
         return next()
     else{

@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken')
-const config = require('../configs/jwt-config')
 const TypedError = require('./ErrorHandler')
 function ensureAuthenticated(req, res, next) {
   let token = ''
@@ -11,7 +10,7 @@ function ensureAuthenticated(req, res, next) {
     token = token.slice(7, token.length)
   }
   if (token) {
-    jwt.verify(token, config.secret, (err, decoded) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
       if (err) {
         let err = new TypedError('token', 401, 'invalid_field', {
           message: "Token is not valid"

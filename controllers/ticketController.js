@@ -3,7 +3,6 @@ import EventSchema from "@models/Event";
 import TypedError from "../modules/ErrorHandler";
 import jwt from 'jsonwebtoken';
 
-const config = require('../configs/jwt-config')
 
 const show = async (req, res, next) => {
     try {
@@ -24,7 +23,7 @@ const show = async (req, res, next) => {
 const showAll = async (req, res, next) => {
     try {
         var token = req.headers.authorization.replace('JWT ', '');
-        var decodedAuth = jwt.verify(token, config.secret);
+        var decodedAuth = jwt.verify(token, process.env.JWT_SECRET);
         
         var allEvents = await TicketSchema.find({"user_id": decodedAuth._id});
         if(!allEvents){
@@ -43,7 +42,7 @@ const showAll = async (req, res, next) => {
 const create = async (req, res, next) => {
     try {
       var token = req.headers.authorization.replace('JWT ', '');
-      var decodedAuth = jwt.verify(token, config.secret);
+      var decodedAuth = jwt.verify(token, process.env.JWT_SECRET);
       
       console.log("Buscar por ", req.body.event_id);
       var findEvent = await EventSchema.findById(req.body.event_id);

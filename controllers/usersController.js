@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken')
-const config = require('../configs/jwt-config')
 const ensureAuthenticated = require('../modules/ensureAuthenticated')
 const User = require('../models/User');
 const TypedError = require('../modules/ErrorHandler')
@@ -24,7 +23,7 @@ const register = async (req, res, next) => {
   var user = await newUser.save();
   let token = jwt.sign(
           user.toJSON(),
-          config.secret,
+          process.env.JWT_SECRET,
           { expiresIn: '7d' }
   );
   return res.json({
@@ -53,7 +52,7 @@ const login = async (req, res, next) => {
 
   let token = jwt.sign(
           user,
-          config.secret,
+          process.env.JWT_SECRET,
           { expiresIn: '7d' }
   );
 
