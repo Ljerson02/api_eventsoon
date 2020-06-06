@@ -1,6 +1,6 @@
 const TypedError = require('../../modules/ErrorHandler');
 const { check, validationResult } = require('express-validator');
-const User = require('@models/User');
+const User = require('./../../models/User');
 
 const registerValidation = (req, res, next) => {
   console.log({req});
@@ -53,7 +53,7 @@ const validate = (req, res, next) => {
 }
 
 
-export default {
+module.exports = {
     registerValidation,
     loginValidation,
     validate,

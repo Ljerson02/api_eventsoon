@@ -1,6 +1,6 @@
-import EventSchema from "@models/Event";
-import TypedError from "../modules/ErrorHandler";
-import jwt from 'jsonwebtoken';
+const EventSchema = require ("./../models/Event");
+const TypedError = require ("../modules/ErrorHandler");
+const jwt = require ('jsonwebtoken');
 
 const show = async (req, res, next) => {
     try {
@@ -88,7 +88,7 @@ const update = async (req, res, next) => {
 };
 
 
-export default {
+module.exports = {
     show,
     showAll,
     create,

@@ -27,7 +27,7 @@ const validate = (req, res, next) => {
   })
 }
 
-export default {
+module.exports = {
     eventDataValidation,
     validate
 }

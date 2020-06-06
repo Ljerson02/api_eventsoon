@@ -28,6 +28,6 @@ const queryBuilder = async(req,model=null) => {
 
 };
 
-export default {
+module.exports = {
     queryBuilder
 }

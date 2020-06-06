@@ -1,12 +1,12 @@
-import path from "path";
-import cookieParser from "cookie-parser";
-import bodyParser from "body-parser";
-import logger from "morgan";
-import express from "express";
-import mongoose from "mongoose";
-import cors from "cors";
-import routes from "./routes";
-import TypedError from "./modules/ErrorHandler";
+const path =  require ("path");
+const cookieParser =  require ("cookie-parser");
+const bodyParser =  require ("body-parser");
+const logger =  require ("morgan");
+const express =  require ("express");
+const mongoose =  require ("mongoose");
+const cors =  require ("cors");
+const routes =  require ("./routes");
+const TypedError =  require ("./modules/ErrorHandler");
 require('dotenv').config();
 
 mongoose.connect(

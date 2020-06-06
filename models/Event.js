@@ -39,6 +39,5 @@ var eventSchema = mongoose.Schema({
     }
 });
 
-var Event = module.exports = mongoose.model('Event', eventSchema);
 
-// Pendiente export default mongoose.model('Store', storeSchema);
+module.exports = mongoose.model('Event', eventSchema );

@@ -1,7 +1,7 @@
-import TicketSchema from "@models/Ticket";
-import EventSchema from "@models/Event";
-import TypedError from "../modules/ErrorHandler";
-import jwt from 'jsonwebtoken';
+const TicketSchema = require ('./../models/Ticket');
+const EventSchema = require ("./../models/Event");
+const TypedError = require ("../modules/ErrorHandler");
+const jwt = require ('jsonwebtoken');
 
 
 const show = async (req, res, next) => {
@@ -69,7 +69,7 @@ const create = async (req, res, next) => {
     }
 };
 
-export default {
+module.exports = {
     show,
     showAll,
     create

@@ -28,6 +28,4 @@ var ticketSchema = mongoose.Schema({
     },
 });
 
-var Ticket = module.exports = mongoose.model('Ticket', ticketSchema);
-
-// Pendiente export default mongoose.model('Store', storeSchema);
+module.exports = mongoose.model('Ticket', ticketSchema );

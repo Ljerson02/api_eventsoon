@@ -6,5 +6,4 @@ require("@babel/register")({
   ]
 });
 require('module-alias/register')
-// Import the rest of our application.
 module.exports = require('./app.js')

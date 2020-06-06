@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Api for Eventsoon platform",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node start.js"
+    "start": "node app.js"
   },
   "author": "jersonlozano95@gmail.com",
   "license": "ISC",

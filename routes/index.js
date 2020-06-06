@@ -1,7 +1,7 @@
-import express from 'express';
-import userRoutes from './users';
-import eventsRoutes from './events';
-import ticketsRoutes from './tickets';
+const express = require ('express');
+const userRoutes = require ('./users');
+const eventsRoutes = require ('./events');
+const ticketsRoutes = require ('./tickets');
 const router = express.Router();
 
 /** GET /health-check - Check service health */
@@ -14,4 +14,4 @@ router.use('/users', userRoutes);
 router.use('/events', eventsRoutes);
 router.use('/tickets', ticketsRoutes);
 
-export default router;
+module.exports = router;
