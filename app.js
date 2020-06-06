@@ -50,7 +50,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500).json(err);
 });
 
-app.listen(3010, () => {
+app.listen(process.env.PORT, () => {
   console.log(`server started on Port: 3010}`);
 });
 
