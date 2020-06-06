@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-local": "cross-env NODE_ENV=LOCAL NODE_OPTIONS='--max-old-space-size=6144' forever -d -w -o logs/out.log -e logs/errors.log -l logs/logfile.log -a index.js"
+    "start": "node index.js"
   },
   "author": "jersonlozano95@gmail.com",
   "license": "ISC",
