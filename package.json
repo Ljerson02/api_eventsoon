@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Api for Eventsoon platform",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
@@ -23,18 +22,5 @@
     "mongoose": "^5.9.17",
     "morgan": "^1.10.0",
     "shortid": "^2.2.15"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/plugin-transform-runtime": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/register": "^7.10.1"
-  },
-  "_moduleAliases": {
-    "@validators": "services/validators/",
-    "@models": "models/",
-    "@auth": "services/auth",
-    "@services": "services",
-    "@config": "configs/"
   }
 }
